@@ -142,6 +142,21 @@ public class BasicController {
         return "basic/comments";
     }
 
+    //블록 처리
+    @GetMapping("/block")
+    public String block(Model model) {
+        addUsers(model);
+        return "basic/block";
+    }
+
+    //자바스크립트 인라인(타임리프 안에서 자바스크립트 사용)
+    @GetMapping("/javascript")
+    public String javascript(Model model) {
+        model.addAttribute("user", new User("userA", 10));
+        addUsers(model);
+        return "basic/javascript";
+    }
+
 
 
     //데이터 전달을 위해 임의의 데이터 생성

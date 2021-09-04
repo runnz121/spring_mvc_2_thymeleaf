@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--블록을 기준으로 안에 컬렉션을 반복하면서 출력시킨다-->
+<th:block th:each="user : ${users}">
+  <div>
+    사용자 이름1 <span th:text="${user.username}"></span>
+    사용자 나이1 <span th:text="${user.age}"></span> </div>
+  <div>
+    요약 <span th:text="${user.username} + ' / ' + ${user.age}"></span>
+  </div>
+</th:block>
+</body>
+</html>
